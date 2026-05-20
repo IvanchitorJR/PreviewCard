@@ -1,0 +1,161 @@
+$green500: hsl(158, 36%, 37%);
+$green700: hsl(158, 42%, 18%);
+$black: hsl(212, 21%, 14%);
+$grey: hsl(228, 12%, 48%);
+$gream: hsl(30, 38%, 92%);
+$white: hsl(0, 0%, 100%);
+$paragraph: 14px;
+$light: 500;
+$bold: 700;
+$montserrat: 'Montserrat', sans-serif;
+$fraunces: 'Fraunces', serif;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $gream;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    width: 30rem;
+    border-radius: 0.9rem;
+
+    picture{
+        width: 100%;
+        height: auto;
+
+        .perfume-img{
+            max-inline-size: 100%;
+            block-size: auto;
+            border-radius: 0.9rem 0.9rem 0 0;
+        }
+    }
+    
+
+    .card-txt{
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 1.5rem;
+
+        span{
+            font-family: $montserrat; 
+            letter-spacing: 0.2rem;
+            color: $grey;
+            font-size: 0.7rem;
+            font-weight: $light;
+        }
+
+        h1{
+            font-family: $fraunces;
+            color: $black;
+            font-size: 1.6rem;
+        }
+
+        .text{
+            font-family: $montserrat;
+            color: $grey;
+            font-size: $paragraph;
+            font-weight: $light;
+        }
+
+        .prices{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            strong{
+                font-family: $fraunces;
+                color: $green500;
+                font-size: 1.6rem;
+            }
+
+            p{
+                font-family: $montserrat;
+                text-decoration: line-through;
+                color: $grey;
+                font-size: 0.8rem;
+                font-weight: $light;
+            }
+        }
+
+        button{
+            background-color: $green500;
+            border: none;
+            padding: 0.9rem;
+            border-radius: 0.5rem;
+            color: $white;
+            font-family: $montserrat;
+            font-weight: $bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+
+            &:hover{
+                background-color: $green700;
+                cursor: pointer;
+            }
+
+            img{
+                transform: scaleX(1);
+            }
+        }
+    }
+}
+
+@media(min-width: 48rem){
+    .container{
+        flex-direction: row;
+        width: 40rem;
+
+        picture{
+            width: 150%;
+            height: auto;
+
+            .perfume-img{
+                width: 100%;
+                height: 100%;
+                border-radius: 0.9rem 0 0 0.9rem;
+                object-fit: cover;
+            }
+        }
+
+        .card-txt{
+            padding: 1.8rem;
+            justify-content: space-between;
+
+            h1{
+                font-size: 2.3rem;
+            }
+
+            .text{
+                line-height: 1.6;
+                font-size: 0.9rem;
+            }
+        }
+
+        .prices{
+            strong{
+                font-size: 2.3rem;
+            }
+        }
+
+        button{
+            padding: 1.1rem;
+        }
+    }
+}
